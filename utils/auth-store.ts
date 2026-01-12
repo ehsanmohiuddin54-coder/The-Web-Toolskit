@@ -36,7 +36,7 @@ const getStoredUsers = (): StoredUser[] => {
 
 export const signUp = (email: string, name: string, password?: string): User => {
   if (!isValidEmail(email)) {
-    throw new Error('Only @gmail.com and @outlook.com emails are allowed.');
+    throw new Error('Invalid Credentials.');
   }
 
   const users = getStoredUsers();
