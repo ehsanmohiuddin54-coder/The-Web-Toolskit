@@ -46,7 +46,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold shadow-md shadow-indigo-200">
               T
             </div>
-            <span className="text-xl font-bold text-slate-800 tracking-tight">SEO Toolkit</span>
+            <span className="text-xl font-bold text-slate-800 tracking-tight">Text Toolkit</span>
           </Link>
           <button 
             className="md:hidden p-2 text-slate-500 hover:bg-slate-50 rounded-lg"

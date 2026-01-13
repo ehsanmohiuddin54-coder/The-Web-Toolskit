@@ -103,7 +103,7 @@ export const Home: React.FC = () => {
           </span>
         </h1>
         <p className="text-xl text-slate-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-          Stop using tools that steal your data. **SEO & Text Toolkit** runs entirely in your browser. Fast, private, and powerful utilities for the modern web.
+          Stop using tools that steal your data. **Web Text Toolkit** runs entirely in your browser. Access fast, reliable text, SEO, and formatting tools built for the modern web.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link to="/word-counter" className="px-10 py-5 bg-indigo-600 text-white font-bold rounded-2xl hover:bg-indigo-700 transition-all shadow-xl shadow-indigo-100 flex items-center space-x-2 text-lg">
@@ -183,7 +183,7 @@ export const Home: React.FC = () => {
               Without Compromise.
             </h2>
             <p className="text-slate-400 text-lg leading-relaxed">
-              Why use legacy tools that require account creation and tracking? The **SEO & Text Toolkit** provides a sanitized, isolated workspace for your sensitive content analysis.
+              Why use legacy tools that require account creation and tracking? The **Web Text Toolkit** provides a sanitized, isolated workspace for your sensitive content analysis.
             </p>
             <div className="flex gap-4">
               <div className="flex -space-x-3 overflow-hidden">
