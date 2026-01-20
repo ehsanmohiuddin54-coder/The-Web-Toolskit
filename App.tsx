@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { HashRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
 import { WordCounter } from './pages/WordCounter';
@@ -46,7 +46,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <HashRouter>
+    <Router>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -70,7 +70,7 @@ const App: React.FC = () => {
           } />
         </Routes>
       </Layout>
-    </HashRouter>
+    </Router>
   );
 };
 
