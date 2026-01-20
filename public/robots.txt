@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://www.thewebtoolskit.com/sitemap.xml
 Sitemap: https://thewebtoolskit.com/sitemap.xml
