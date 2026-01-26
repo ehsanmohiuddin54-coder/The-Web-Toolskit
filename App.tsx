@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './pages/Home';
-import { WordCounter } from './pages/WordCounter';
+import WordCounter from "./pages/WordCounter";
 import { CaseConverter } from './pages/CaseConverter';
 import { TextCleaner } from './pages/TextCleaner';
 import { KeywordDensity } from './pages/KeywordDensity';
