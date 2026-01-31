@@ -12,7 +12,8 @@ const DEFAULT_SETTINGS: AppSettings = {
     '/meta-generator',
     '/json-formatter',
     '/char-remover',
-    '/gpa-calculator'
+    '/gpa-calculator',
+    '/PDFEditor'
   ]
 };
 

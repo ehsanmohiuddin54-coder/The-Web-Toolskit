@@ -150,7 +150,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
           {children}
         </div>
         <footer className="py-8 px-8 text-center text-slate-400 text-sm border-t border-slate-100 bg-white">
-          &copy; {new Date().getFullYear()} SEO & Text Toolkit. Built for Privacy & Speed.
+          &copy; {new Date().getFullYear()} The Web Toolskit. Built for Privacy & Speed.
         </footer>
       </main>
     </div>
