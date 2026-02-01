@@ -229,7 +229,7 @@ export const Home: React.FC = () => {
            
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <Link to="/www.thewebtoolskit.com" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
+              <Link to="/" className="text-slate-700 hover:text-indigo-600 font-medium transition-colors">
                 Home
               </Link>
               
