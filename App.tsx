@@ -8,9 +8,9 @@ import { TextCleaner } from './pages/TextCleaner';
 import { KeywordDensity } from './pages/KeywordDensity';
 import { MetaGenerator } from './pages/MetaGenerator';
 import { JsonFormatter } from './pages/JsonFormatter';
-import { SpecialCharacterRemover } from './pages/SpecialCharacterRemover';
+import { CharacterRemover } from './pages/CharacterRemover'; // Named import
 import { GpaCalculator } from './pages/GpaCalculator';
-import   PDFEditor  from './pages/PDFEditor'; // Fixed: Use correct component name
+import PDFEditor from './pages/PDFEditor'; // Default import
 import { Login } from './pages/Login';
 import { SignUp } from './pages/SignUp';
 import { BlogList } from './pages/BlogList';
@@ -29,7 +29,7 @@ export const navItems = [
   { path: '/json-formatter', label: 'JSON Formatter', icon: '📦' },
   { path: '/char-remover', label: 'Char Remover', icon: '🚫' },
   { path: '/gpa-calculator', label: 'GPA Calculator', icon: '🎓' },
-  { path: 'PDFEditor', label: 'PDF Editor', icon: '📄' }, // Fixed: Correct path
+  { path: '/pdf-editor', label: 'PDF Editor', icon: '📄' },
   { path: '/blog', label: 'Blog', icon: '✍️' },
 ];
 
@@ -38,10 +38,15 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const settings = getSettings();
+    console.log('Settings loaded:', settings); // Debug log
     setEnabledTools(settings.enabledTools);
     
     // Listen for changes
-    const handleStorage = () => setEnabledTools(getSettings().enabledTools);
+    const handleStorage = () => {
+      const newSettings = getSettings();
+      console.log('Settings changed:', newSettings); // Debug log
+      setEnabledTools(newSettings.enabledTools);
+    };
     window.addEventListener('storage', handleStorage);
     return () => window.removeEventListener('storage', handleStorage);
   }, []);
@@ -57,9 +62,23 @@ const App: React.FC = () => {
           <Route path="/keyword-density" element={enabledTools.includes('/keyword-density') ? <KeywordDensity /> : <Home />} />
           <Route path="/meta-generator" element={enabledTools.includes('/meta-generator') ? <MetaGenerator /> : <Home />} />
           <Route path="/json-formatter" element={enabledTools.includes('/json-formatter') ? <JsonFormatter /> : <Home />} />
-          <Route path="/char-remover" element={enabledTools.includes('/char-remover') ? <SpecialCharacterRemover /> : <Home />} />
+          
+          {/* Character Remover Route - Add debug */}
+          <Route 
+            path="/char-remover" 
+            element={
+              enabledTools.includes('/char-remover') 
+                ? <CharacterRemover /> 
+                : <div>
+                    <h1>Tool Not Enabled</h1>
+                    <p>Char Remover is not in enabled tools. Current enabled tools: {JSON.stringify(enabledTools)}</p>
+                    <button onClick={() => window.location.href = '/'}>Go Home</button>
+                  </div>
+            } 
+          />
+          
           <Route path="/gpa-calculator" element={enabledTools.includes('/gpa-calculator') ? <GpaCalculator /> : <Home />} />
-          <Route path="/pdf-editor" element={enabledTools.includes('/pdf-editor') ? <PDFEditor /> : <Home />} /> {/* Fixed: Use correct component */}
+          <Route path="/pdf-editor" element={<PDFEditor />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/blog" element={<BlogList />} />
